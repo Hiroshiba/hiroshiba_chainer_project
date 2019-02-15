@@ -1,0 +1,26 @@
+{
+  "dataset": {
+    "seed": 0,
+    "num_test": 0
+  },
+  "network": {
+  },
+  "loss": {
+  },
+  "train": {
+    "batchsize": 50,
+    "gpu": 0,
+    "log_iteration": 100,
+    "snapshot_iteration": 10000,
+    "stop_iteration": null,
+    "optimizer": {
+      "name": "adam"
+    },
+    "optimizer_gradient_clipping": null,
+    "linear_shift": null
+  },
+  "project": {
+    "name": "",
+    "tags": []
+  }
+}
