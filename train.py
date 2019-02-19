@@ -28,7 +28,7 @@ def train(
 
     # model
     predictor = create_predictor(config.network)
-    model = Model(loss_config=config.loss, predictor=predictor)
+    model = Model(model_config=config.model, predictor=predictor)
 
     if config.train.gpu is not None:
         model.to_gpu(config.train.gpu)
@@ -90,7 +90,7 @@ def train(
     trainer.extend(extensions.FailOnNonNumber(), trigger=trigger_log)
     trainer.extend(extensions.observe_lr(), trigger=trigger_log)
     trainer.extend(extensions.LogReport(trigger=trigger_log))
-    trainer.extend(extensions.PrintReport(['main/loss', 'test/main/loss']), trigger=trigger_log)
+    trainer.extend(extensions.PrintReport(['main/model', 'test/main/model']), trigger=trigger_log)
     trainer.extend(TensorBoardReport(writer=tb_writer), trigger=trigger_log)
     if trigger_stop is not None:
         trainer.extend(extensions.ProgressBar(trigger_stop))

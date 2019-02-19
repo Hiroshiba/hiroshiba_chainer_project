@@ -37,7 +37,7 @@ class ProjectConfig(NamedTuple):
 class Config(NamedTuple):
     dataset: DatasetConfig
     network: NetworkConfig
-    loss: ModelConfig
+    model: ModelConfig
     train: TrainConfig
     project: ProjectConfig
 
@@ -59,7 +59,7 @@ def create(d: Dict[str, Any]):
         ),
         network=NetworkConfig(
         ),
-        loss=ModelConfig(
+        model=ModelConfig(
         ),
         train=TrainConfig(
             batchsize=d['train']['batchsize'],

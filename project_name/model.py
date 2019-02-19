@@ -13,9 +13,9 @@ def create_predictor(config: NetworkConfig):
 
 
 class Model(Chain):
-    def __init__(self, loss_config: ModelConfig, predictor: SampleNetwork) -> None:
+    def __init__(self, model_config: ModelConfig, predictor: SampleNetwork) -> None:
         super().__init__()
-        self.loss_config = loss_config
+        self.model_config = model_config
         with self.init_scope():
             self.predictor = predictor
 

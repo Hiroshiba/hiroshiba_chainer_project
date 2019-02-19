@@ -9,7 +9,7 @@ from project_name.utility import save_arguments
 
 
 def _extract_number(f):
-    s = re.findall("\d+", str(f))
+    s = re.findall(r'\d+', str(f))
     return int(s[-1]) if s else -1
 
 
